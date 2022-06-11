@@ -144,7 +144,7 @@ jobs:
       - name: Add sysinfo
         run: |
           mkdir -p files/sbin
-          wget https://raw.githubusercontent.com/obsy/packages/master/sysinfo/files/sbin/sysinfo.sh -P files/sbin
+          wget https://raw.githubusercontent.com/mstarczewski/OpenWRT_packages/master/sysinfo/files/sbin/sysinfo.sh -P files/sbin
           chmod +x files/sbin/sysinfo.sh
       - name: Enable WiFi on default config
         run: |
