@@ -63,7 +63,9 @@ jobs:
           echo 'CONFIG_TARGET_SQUASHFS_BLOCK_SIZE=256' >> .config
           echo 'CONFIG_TARGET_UBIFS_FREE_SPACE_FIXUP=y' >> .config
           echo 'CONFIG_TARGET_OPTIMIZATION="-Os -pipe -mcpu=cortex-a53"' >> .config
-          #Config minimal
+          #
+          ########## Config minimal ##########
+          #
           echo "CONFIG_PACKAGE_cgi-io=y" >> .config
           echo "CONFIG_PACKAGE_kmod-qca-nss-dp=y" >> .config
           echo "CONFIG_PACKAGE_kmod-qca-ssdk-nohnat=y" >> .config
@@ -98,17 +100,39 @@ jobs:
           echo "CONFIG_PACKAGE_uhttpd-mod-ubus=y" >> .config   
           echo "CONFIG_PACKAGE_wpad-basic-wolfssl=m" >> .config   
           echo "CONFIG_PACKAGE_wpad-wolfssl=m" >> .config   
-          #Config WireGuard
+          #
+          ########## Config WireGuard ##########
+          #
+          echo "CONFIG_PACKAGE_kmod-crypto-kpp=y" >> .config
+          echo "CONFIG_PACKAGE_kmod-crypto-lib-chacha20=y" >> .config
+          echo "CONFIG_PACKAGE_kmod-crypto-lib-poly1305=y" >> .config
+          echo "CONFIG_PACKAGE_kmod-crypto-lib-blake2s=y" >> .config      
+          echo "CONFIG_PACKAGE_kmod-crypto-lib-chacha20poly1305=y" >> .config
+          echo "CONFIG_PACKAGE_kmod-crypto-lib-curve25519=y" >> .config          
+          echo "CONFIG_PACKAGE_kmod-udptunnel4=y" >> .config
+          echo "CONFIG_PACKAGE_kmod-udptunnel6=y" >> .config
+          echo "CONFIG_PACKAGE_libcares=y" >> .config
+          echo "CONFIG_PACKAGE_librt=y" >> .config          
+
           echo "CONFIG_PACKAGE_luci-app-wireguard=y" >> .config
           echo "CONFIG_PACKAGE_kmod-wireguard=y" >> .config     
           echo "CONFIG_PACKAGE_wireguard-tools=y" >> .config    
           echo "CONFIG_PACKAGE_luci-proto-wireguard=y" >> .config    
-          #Config Adblock
+          #
+          ########## Config Adblock ##########
+          #
           echo "CONFIG_PACKAGE_adblock=y" >> .config
           echo "CONFIG_PACKAGE_luci-app-adblock=y" >> .config            
-          #Config
+          #
+          ########## Config Utilis ##########
+          #
           echo "CONFIG_PACKAGE_bash=y" >> .config
-          echo "CONFIG_PACKAGE_cJSON=y" >> .config
+          echo "CONFIG_PACKAGE_zlib=m" >> .config
+          echo "CONFIG_PACKAGE_htop=y" >> .config   
+          echo "CONFIG_PACKAGE_nano=y" >> .config
+          #
+          ########## Config Statistics ##########
+          #
           echo "CONFIG_PACKAGE_collectd=y" >> .config
           echo "CONFIG_PACKAGE_collectd-mod-cpu=y" >> .config
           echo "CONFIG_PACKAGE_collectd-mod-interface=y" >> .config
@@ -116,36 +140,35 @@ jobs:
           echo "CONFIG_PACKAGE_collectd-mod-load=y" >> .config
           echo "CONFIG_PACKAGE_collectd-mod-memory=y" >> .config
           echo "CONFIG_PACKAGE_collectd-mod-network=y" >> .config
-          echo "CONFIG_PACKAGE_collectd-mod-rrdtool=y" >> .config
-          echo "CONFIG_PACKAGE_htop=y" >> .config
-          echo "CONFIG_PACKAGE_kmod-crypto-kpp=y" >> .config
-          echo "CONFIG_PACKAGE_kmod-crypto-lib-blake2s=y" >> .config
-          echo "CONFIG_PACKAGE_kmod-crypto-lib-chacha20=y" >> .config
-          echo "CONFIG_PACKAGE_kmod-crypto-lib-chacha20poly1305=y" >> .config
-          echo "CONFIG_PACKAGE_kmod-crypto-lib-curve25519=y" >> .config
-          echo "CONFIG_PACKAGE_kmod-crypto-lib-poly1305=y" >> .config
-          echo "CONFIG_PACKAGE_kmod-udptunnel4=y" >> .config
-          echo "CONFIG_PACKAGE_kmod-udptunnel6=y" >> .config
-          echo "CONFIG_PACKAGE_libcares=y" >> .config
-          echo "CONFIG_PACKAGE_libltdl=y" >> .config
-          echo "CONFIG_PACKAGE_libmosquitto-ssl=y" >> .config
-          echo "CONFIG_PACKAGE_libncurses=y" >> .config
-          echo "CONFIG_PACKAGE_libopenssl=y" >> .config
-          echo "CONFIG_PACKAGE_libqrencode=y" >> .config
-          echo "CONFIG_PACKAGE_libreadline=y" >> .config
           echo "CONFIG_PACKAGE_librrd1=y" >> .config
-          echo "CONFIG_PACKAGE_librt=y" >> .config
-          echo "CONFIG_PACKAGE_libuci-lua=y" >> .config
+          echo "CONFIG_PACKAGE_collectd-mod-rrdtool=y" >> .config
           echo "CONFIG_PACKAGE_luci-app-statistics=y" >> .config
-          echo "CONFIG_PACKAGE_mosquitto-client-ssl=y" >> .config
-          echo "CONFIG_PACKAGE_nano=y" >> .config
+          echo "CONFIG_PACKAGE_rrdtool1=y" >> .config         
+          #
+          ########## Config Acme ##########
+          echo "CONFIG_PACKAGE_acme=y" >> .config
+          echo "CONFIG_PACKAGE_wget-ssl=y" >> .config
+          echo "CONFIG_PACKAGE_ca-bundle=y" >> .config
+          echo "CONFIG_PACKAGE_openssl-util=y" >> .config
+          echo "CONFIG_PACKAGE_socat=y" >> .config
+          #
+          ########## Config Others ##########
+          #
+          echo "CONFIG_PACKAGE_libuci-lua=y" >> .config
+          echo "CONFIG_PACKAGE_libreadline=y" >> .config          
+          ########## Config MQTT ##########
+          #echo "CONFIG_PACKAGE_mosquitto-client-ssl=y" >> .config
+          #echo "CONFIG_PACKAGE_cJSON=y" >> .config
+          #echo "CONFIG_PACKAGE_libmosquitto-ssl=y" >> .config
+          ##########
+          #echo "CONFIG_PACKAGE_libltdl=y" >> .config
+          #echo "CONFIG_PACKAGE_libncurses=y" >> .config
+          #echo "CONFIG_PACKAGE_libopenssl=y" >> .config
+          #echo "CONFIG_PACKAGE_libqrencode=y" >> .config
+          #echo "CONFIG_PACKAGE_qrencode=y" >> .config
           #echo "CONFIG_PACKAGE_nss-firmware-ipq8074=y" >> .config
-          echo "CONFIG_PACKAGE_qrencode=y" >> .config
-          echo "CONFIG_PACKAGE_rrdtool1=y" >> .config
-          echo "CONFIG_PACKAGE_terminfo=y" >> .config
+          #echo "CONFIG_PACKAGE_terminfo=y" >> .config
           #echo "CONFIG_PACKAGE_wpad-openssl=m" >> .config
-          echo "CONFIG_PACKAGE_zlib=y" >> .config
-               
           make defconfig
       - name: Add configuration
         run: |
