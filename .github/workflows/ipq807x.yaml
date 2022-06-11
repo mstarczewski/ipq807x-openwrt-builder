@@ -223,12 +223,16 @@ jobs:
         run: >-
           echo "BUILDINFO=$(cat bin/targets/ipq807x/generic/version.buildinfo)"
           >> $GITHUB_ENV
+      - name: Get current date
+        run: echo "NOW=$(date +%F)" >> $GITHUB_ENV          
       - name: Create a release
         uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: '${{ secrets.GITHUB_TOKEN }}'
           prerelease: true
-          title: 'Updated prebuilt images (${{ env.BUILDINFO }})'
-          automatic_release_tag: ipq807x-5.15-latest
+          title: 'Updated prebuilt images (${{ env.BUILDINFO }} ${{ env.NOW }})'
+          automatic_release_tag: ipq807x-5.15-${{ env.NOW }}
           files: bin/targets/ipq807x/generic/*
+
+          
      
