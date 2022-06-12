@@ -173,6 +173,7 @@ jobs:
           /etc/init.d/acme disable
           /etc/init.d/dnscrypt-proxy enable
           /etc/init.d/dnscrypt-proxy restart
+          /etc/init.d/adblock restart
           EOF
       - name: Download package sources
         run: make download V=s
