@@ -156,19 +156,7 @@ jobs:
           #
           echo "CONFIG_PACKAGE_libuci-lua=y" >> .config
           echo "CONFIG_PACKAGE_libreadline=y" >> .config          
-          ########## Config MQTT ##########
-          #echo "CONFIG_PACKAGE_mosquitto-client-ssl=y" >> .config
-          #echo "CONFIG_PACKAGE_cJSON=y" >> .config
-          #echo "CONFIG_PACKAGE_libmosquitto-ssl=y" >> .config
-          ##########
-          #echo "CONFIG_PACKAGE_libltdl=y" >> .config
-          #echo "CONFIG_PACKAGE_libncurses=y" >> .config
-          #echo "CONFIG_PACKAGE_libopenssl=y" >> .config
-          #echo "CONFIG_PACKAGE_libqrencode=y" >> .config
-          #echo "CONFIG_PACKAGE_qrencode=y" >> .config
-          #echo "CONFIG_PACKAGE_nss-firmware-ipq8074=y" >> .config
-          #echo "CONFIG_PACKAGE_terminfo=y" >> .config
-          #echo "CONFIG_PACKAGE_wpad-openssl=m" >> .config
+          #         
           make defconfig
       - name: Add configuration
         run: |
