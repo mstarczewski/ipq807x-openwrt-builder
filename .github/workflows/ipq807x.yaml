@@ -142,8 +142,8 @@ jobs:
           echo "CONFIG_PACKAGE_collectd-mod-load=y" >> .config
           echo "CONFIG_PACKAGE_collectd-mod-memory=y" >> .config
           echo "CONFIG_PACKAGE_collectd-mod-network=y" >> .config
-          echo "CONFIG_PACKAGE_librrd1=y" >> .config
-          echo "CONFIG_PACKAGE_collectd-mod-rrdtool=y" >> .config
+          #echo "CONFIG_PACKAGE_librrd1=y" >> .config
+          #echo "CONFIG_PACKAGE_collectd-mod-rrdtool=y" >> .config
           echo "CONFIG_PACKAGE_luci-app-statistics=y" >> .config
           #echo "CONFIG_PACKAGE_rrdtool1=y" >> .config         
           #
