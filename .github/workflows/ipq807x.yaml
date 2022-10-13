@@ -135,17 +135,17 @@ jobs:
           #
           ########## Config Statistics ##########
           #
-          #echo "CONFIG_PACKAGE_collectd=y" >> .config
-          #echo "CONFIG_PACKAGE_collectd-mod-cpu=y" >> .config
-          #echo "CONFIG_PACKAGE_collectd-mod-interface=y" >> .config
-          #echo "CONFIG_PACKAGE_collectd-mod-iwinfo=y" >> .config
-          #echo "CONFIG_PACKAGE_collectd-mod-load=y" >> .config
-          #echo "CONFIG_PACKAGE_collectd-mod-memory=y" >> .config
-          #echo "CONFIG_PACKAGE_collectd-mod-network=y" >> .config
-          #echo "CONFIG_PACKAGE_librrd1=y" >> .config
-          #echo "CONFIG_PACKAGE_collectd-mod-rrdtool=y" >> .config
-          #echo "CONFIG_PACKAGE_luci-app-statistics=y" >> .config
-          #echo "CONFIG_PACKAGE_rrdtool1=y" >> .config         
+          echo "CONFIG_PACKAGE_collectd=y" >> .config
+          echo "CONFIG_PACKAGE_collectd-mod-cpu=y" >> .config
+          echo "CONFIG_PACKAGE_collectd-mod-interface=y" >> .config
+          echo "CONFIG_PACKAGE_collectd-mod-iwinfo=y" >> .config
+          echo "CONFIG_PACKAGE_collectd-mod-load=y" >> .config
+          echo "CONFIG_PACKAGE_collectd-mod-memory=y" >> .config
+          echo "CONFIG_PACKAGE_collectd-mod-network=y" >> .config
+          echo "CONFIG_PACKAGE_librrd1=y" >> .config
+          echo "CONFIG_PACKAGE_collectd-mod-rrdtool=y" >> .config
+          echo "CONFIG_PACKAGE_luci-app-statistics=y" >> .config
+          echo "CONFIG_PACKAGE_rrdtool1=y" >> .config         
           #
           ########## Config Acme ##########
           echo "CONFIG_PACKAGE_acme=y" >> .config
